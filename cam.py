@@ -1,19 +1,42 @@
 #!/usr/bin/env python3
-#tiktok : @koxyops
-#instagram : @koxyops
+# tiktok : @koxyops
+# instagram : @koxyops
 
-import requests, re , colorama
-print("""
-\033[1;35m  KOXY-Cam
+import requests
+import re
+import colorama
 
-                ██╗░░██╗░█████╗░██╗░░██╗██╗░░░██╗░░░░░░░█████╗░░█████╗░███╗░░░███╗
-                ██║░██╔╝██╔══██╗╚██╗██╔╝╚██╗░██╔╝░░░░░░██╔══██╗██╔══██╗████╗░████║
-                █████═╝░██║░░██║░╚███╔╝░░╚████╔╝░█████╗██║░░╚═╝███████║██╔████╔██║
-                ██╔═██╗░██║░░██║░██╔██╗░░░╚██╔╝░░╚════╝██║░░██╗██╔══██║██║╚██╔╝██║
-                ██║░╚██╗╚█████╔╝██╔╝╚██╗░░░██║░░░░░░░░░╚█████╔╝██║░░██║██║░╚═╝░██║
-                ╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░░░░░░░░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝
+def login():
+    max_attempts = 3
+    for attempt in range(max_attempts):
+        username_input = input("Enter your username: ")
+        password_input = input("Enter your password: ")
 
-                                tiktok:@koxyops | instagram:@koxyops
+        if username_input == "koxy" and password_input == "koxy":
+            print("\033[1;32mLogin successful!\033[0m")
+            return True
+        else:
+            remaining_attempts = max_attempts - attempt - 1
+            print(f"\033[1;31mLogin failed. {remaining_attempts} attempts remaining.\033[0m")
+
+    print("\033[1;31mMaximum login attempts reached. Exiting...\033[0m")
+    exit()
+
+def main():
+    colorama.init()
+    login()  # Call the login function before proceeding to the main functionality
+
+    print("""
+    \033[1;35m  KOXY-Cam
+
+    ██╗░░██╗░█████╗░██╗░░██╗██╗░░░██╗░░░░░░░█████╗░░█████╗░███╗░░░███╗
+    ██║░██╔╝██╔══██╗╚██╗██╔╝╚██╗░██╔╝░░░░░░██╔══██╗██╔══██╗████╗░████║
+    █████═╝░██║░░██║░╚███╔╝░░╚████╔╝█████╗██║░░╚═╝███████║██╔████╔██║
+    ██╔═██╗░██║░░██║░██╔██╗░░░╚██╔╝░╚════╝██║░░██╗██╔══██║██║╚██╔╝██║
+    ██║░╚██╗╚█████╔╝██╔╝╚██╗░░░██║░░░░░░░░╚█████╔╝██║░░██║██║░╚═╝░██║
+    ╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░░░░░░░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝
+
+    tiktok:@koxyops | instagram:@koxyops
 
 \033[1;31m
 \033[1;31m                                                                       
@@ -70,6 +93,8 @@ print("""
 
 """)
 
+if __name__ == "__main__":
+    main()
 try:
     print()
     countries = ["US", "JP", "IT", "KR", "FR", "DE", "TW", "RU", "GB", "NL",
@@ -112,4 +137,3 @@ except:
 finally:
     print("\033[1;37m")
     exit()
-
