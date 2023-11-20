@@ -12,7 +12,7 @@ chmod +x *
 
 pip install -r requirements.txt
 
-python cam.py
+python3 cam.py
 
 use : " koxy " for username and
       " koxy " for password 
