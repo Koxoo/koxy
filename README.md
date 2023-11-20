@@ -16,6 +16,9 @@ python cam.py
 
 use : " koxy " for username and
       " koxy " for password 
+
+
+
 After that, choose any number and wait until a link is extracted. Go to the browser and paste the link and enjoy the view.
 
 Follow me on TikTok : @koxyops
